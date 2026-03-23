@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 228 20% 97%;
+    --foreground: 228 50% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 228 50% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 228 50% 15%;
+
+    --primary: 228 55% 33%;
+    --primary-foreground: 48 100% 95%;
+
+    --secondary: 48 100% 50%;
+    --secondary-foreground: 228 55% 15%;
+
+    --muted: 228 15% 92%;
+    --muted-foreground: 228 15% 45%;
+
+    --accent: 48 100% 50%;
+    --accent-foreground: 228 55% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 228 15% 88%;
+    --input: 228 15% 88%;
+    --ring: 228 55% 33%;
+
+    --radius: 0.5rem;
+
+    --brand-dark: 228 63% 15%;
+    --brand-navy: 228 55% 33%;
+    --brand-yellow: 48 100% 50%;
+    --brand-yellow-light: 48 100% 85%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .hero-overlay {
+    background: linear-gradient(
+      180deg,
+      hsl(228 63% 10% / 0.85) 0%,
+      hsl(228 63% 10% / 0.6) 100%
+    );
+  }
+  .section-dark {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--brand-dark)) 0%,
+      hsl(var(--brand-navy)) 100%
+    );
+  }
+  .accent-gradient {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--brand-yellow)) 0%,
+      hsl(48 100% 60%) 100%
+    );
+  }
+  .wellness-gradient {
+    background: linear-gradient(
+      135deg,
+      hsl(142 50% 40%) 0%,
+      hsl(142 40% 50%) 100%
+    );
+  }
+}
+
+@keyframes x-slider {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(calc(-50% - 1.25rem));
+  }
+}
