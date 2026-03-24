@@ -44,6 +44,14 @@ const Footer = () => {
         <div className="border-t border-primary-foreground/20 mt-8 pt-6 flex flex-col sm:flex-row items-center justify-center gap-3 text-sm opacity-50">
           <span>{t('footer.rights')}</span>
           <span className="hidden sm:inline">·</span>
+          <Link href="/aszf" className="hover:opacity-100 transition-opacity">
+            ÁSZF
+          </Link>
+          <span className="hidden sm:inline">·</span>
+          <Link href="/adatvedelem" className="hover:opacity-100 transition-opacity">
+            Adatvédelmi tájékoztató
+          </Link>
+          <span className="hidden sm:inline">·</span>
           <button
             onClick={() => window.dispatchEvent(new Event('open-cookie-settings'))}
             className="hover:opacity-100 transition-opacity"
