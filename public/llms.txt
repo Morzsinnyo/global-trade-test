@@ -1,0 +1,21 @@
+# Global Trade & Production Kft.
+
+> Hungarian B2B manufacturer of frozen bakery products, pizza, snacks and desserts. Industrial-scale production for retail and food-service partners, with custom (white-label) recipe and packaging development. HACCP-certified.
+
+Company: Global Trade & Production Kft.
+Location: 3390 Füzesabony, Pusztaszikszó, Hungary
+Contact: lorincz@global-trade.hu
+Website: https://www.global-trade.hu
+Languages: Hungarian (primary)
+
+## Core pages
+
+- [Kezdőlap (Home)](https://www.global-trade.hu/): Company overview — frozen bakery, pizza, snacks and desserts produced at industrial scale for B2B partners.
+- [Termékek (Products)](https://www.global-trade.hu/products): Product categories and capabilities — frozen bakery, pizza, snacks, desserts. Custom/private-label production.
+- [Rólunk (About)](https://www.global-trade.hu/about): Company background, manufacturing capabilities, HACCP certification, B2B partnership model.
+- [Kapcsolat (Contact)](https://www.global-trade.hu/contact): Contact form and direct contact details for B2B inquiries.
+
+## Legal
+
+- [ÁSZF (Terms of Service)](https://www.global-trade.hu/aszf): General terms and conditions for website use (Hungarian).
+- [Adatvédelmi tájékoztató (Privacy Policy)](https://www.global-trade.hu/adatvedelem): GDPR and Hungarian Info.tv. data-processing notice.
