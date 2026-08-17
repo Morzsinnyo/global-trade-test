@@ -3,6 +3,7 @@
 import { useLanguage } from '@/lib/i18n';
 import { Product } from '@/types/product';
 import { images } from '@/lib/images';
+import { localizeMeasurement } from '@/lib/units';
 
 interface ProductCardProps {
   product: Product;
@@ -48,12 +49,14 @@ const ProductCard = ({ product }: ProductCardProps) => {
       <div className="space-y-1 text-sm">
         {product.weight && (
           <p className="text-muted-foreground">
-            <span className="font-medium text-foreground">{lang === 'hu' ? 'Súly:' : 'Weight:'}</span> {product.weight}
+            <span className="font-medium text-foreground">{lang === 'hu' ? 'Súly:' : 'Weight:'}</span>{' '}
+            {localizeMeasurement(product.weight, lang)}
           </p>
         )}
         {product.packaging && (
           <p className="text-muted-foreground">
-            <span className="font-medium text-foreground">{lang === 'hu' ? 'Csomagolás:' : 'Packaging:'}</span> {product.packaging}
+            <span className="font-medium text-foreground">{lang === 'hu' ? 'Csomagolás:' : 'Packaging:'}</span>{' '}
+            {localizeMeasurement(product.packaging, lang)}
           </p>
         )}
         {flavors.length > 0 && (
