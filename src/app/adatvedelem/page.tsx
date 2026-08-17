@@ -1,12 +1,10 @@
-import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: 'Adatvédelmi tájékoztató — Global Trade & Production Kft.',
   description: 'Tájékoztató a global-trade.hu weboldalon végzett adatkezelésről — GDPR és Info.tv. alapján.',
-  alternates: {
-    canonical: '/adatvedelem',
-  },
-};
+  path: '/adatvedelem',
+});
 
 export default function AdatvedelemPage() {
   return (

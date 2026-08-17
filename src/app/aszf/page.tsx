@@ -1,12 +1,10 @@
-import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: 'Általános Szerződési Feltételek — Global Trade & Production Kft.',
   description: 'A global-trade.hu weboldal használatára vonatkozó általános szerződési feltételek.',
-  alternates: {
-    canonical: '/aszf',
-  },
-};
+  path: '/aszf',
+});
 
 export default function AszfPage() {
   return (

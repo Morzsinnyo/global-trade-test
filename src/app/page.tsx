@@ -1,23 +1,13 @@
-'use client';
+import { pageMetadata } from '@/lib/seo';
+import HomeContent from './HomeContent';
 
-import HeroSection from '@/components/HeroSection';
-import TrustBar from '@/components/TrustBar';
-import StatsCounter from '@/components/StatsCounter';
-import PillarCards from '@/components/PillarCards';
-import ProductPreview from '@/components/ProductPreview';
-import SlidingTestimonials from '@/components/SlidingTestimonials';
-import AboutTeaser from '@/components/AboutTeaser';
+export const metadata = pageMetadata({
+  title: 'Global Trade & Production Kft. — Gyártunk. Testreszabunk. Szállítunk.',
+  description:
+    'Fagyasztott pékáru, pizza, snackek és desszertek — ipari méretben, B2B partnereknek. Magyar tulajdonú gyártó, HACCP tanúsítvánnyal.',
+  path: '/',
+});
 
-export default function Home() {
-  return (
-    <>
-      <HeroSection />
-      <TrustBar />
-      <StatsCounter />
-      <PillarCards />
-      <ProductPreview />
-      <SlidingTestimonials />
-      <AboutTeaser />
-    </>
-  );
+export default function Page() {
+  return <HomeContent />;
 }

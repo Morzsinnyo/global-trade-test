@@ -67,19 +67,42 @@ describe('canonical URLs', () => {
     expect(offenders).toEqual([]);
   });
 
-  it('every declared canonical points at its own URL', () => {
+  it('every page declares an explicit canonical pointing at its own URL', () => {
     for (const page of allPages) {
       const canonical = canonicalOf(page);
-      if (canonical === null) continue; // self-canonicalises; acceptable
+      expect(canonical, `canonical on ${page}`).not.toBeNull();
       const expected = page === '/' ? SITE_URL : `${SITE_URL}${page}`;
-      expect(canonical.replace(/\/$/, ''), `canonical on ${page}`).toBe(expected.replace(/\/$/, ''));
+      expect(canonical!.replace(/\/$/, ''), `canonical on ${page}`).toBe(expected.replace(/\/$/, ''));
     }
   });
+});
 
-  it('pages with their own metadata export declare an explicit canonical', () => {
-    for (const page of ['/aszf', '/adatvedelem'] as PagePath[]) {
-      expect(canonicalOf(page), `canonical on ${page}`).toBe(`${SITE_URL}${page}`);
+describe('per-page titles and descriptions', () => {
+  // Before the client/server split, /products, /about and /contact had no
+  // metadata export of their own (a 'use client' file cannot have one), so all
+  // three served the root layout's homepage title and description verbatim.
+  it('gives every page a distinct title', () => {
+    const titles = allPages.map((page) => metaContent(page, /<title>([^<]*)<\/title>/));
+    expect(new Set(titles).size, `unique titles among ${titles.length} pages`).toBe(titles.length);
+  });
+
+  it('gives every page a distinct meta description', () => {
+    const descriptions = allPages.map((page) =>
+      metaContent(page, /<meta name="description" content="([^"]*)"/)
+    );
+    for (const [i, description] of descriptions.entries()) {
+      expect(description, `description on ${allPages[i]}`).toBeTruthy();
     }
+    expect(new Set(descriptions).size, 'unique descriptions').toBe(descriptions.length);
+  });
+
+  it('gives every page an og:title matching its own page title', () => {
+    for (const page of allPages) {
+      const ogTitle = metaContent(page, /<meta property="og:title" content="([^"]*)"/);
+      expect(ogTitle, `og:title on ${page}`).toBeTruthy();
+    }
+    const ogTitles = allPages.map((page) => metaContent(page, /<meta property="og:title" content="([^"]*)"/));
+    expect(new Set(ogTitles).size, 'unique og:titles').toBe(ogTitles.length);
   });
 });
 
