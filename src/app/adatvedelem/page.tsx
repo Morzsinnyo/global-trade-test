@@ -3,6 +3,9 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Adatvédelmi tájékoztató — Global Trade & Production Kft.',
   description: 'Tájékoztató a global-trade.hu weboldalon végzett adatkezelésről — GDPR és Info.tv. alapján.',
+  alternates: {
+    canonical: '/adatvedelem',
+  },
 };
 
 export default function AdatvedelemPage() {

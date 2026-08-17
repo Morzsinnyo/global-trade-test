@@ -3,6 +3,9 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Általános Szerződési Feltételek — Global Trade & Production Kft.',
   description: 'A global-trade.hu weboldal használatára vonatkozó általános szerződési feltételek.',
+  alternates: {
+    canonical: '/aszf',
+  },
 };
 
 export default function AszfPage() {
